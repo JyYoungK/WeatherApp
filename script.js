@@ -1,3 +1,14 @@
+let dropdown = document.querySelector(".dropdown");
+dropdown.onclick = function () {
+  dropdown.classList.toggle("active");
+};
+
+function display(city) {
+  document.querySelector(".search-bar").value = city;
+  document.querySelector(".city").innerText = city;
+  fetchWeather(city);
+}
+
 function fetchWeather(city) {
   const opeanweathermapApiKEY = "713f964a0a59c33b670434c772385769";
   fetch(
@@ -17,6 +28,7 @@ function fetchWeather(city) {
 }
 
 function displayWeather(data) {
+  console.log(data);
   let { name } = data.city.name;
   const { icon, description } = data.list[0].weather[0];
   const { temp, humidity } = data.list[0].main;

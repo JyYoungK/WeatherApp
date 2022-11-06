@@ -1,0 +1,27 @@
+.flex-container {
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+.center {
+  justify-content: space-evenly;
+}
+
+.center li {
+  background: deepskyblue;
+}
+
+.flex-item {
+  background: tomato;
+  padding: 5px;
+  width: 300px;
+  height: 200px;
+  margin: 5px;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}

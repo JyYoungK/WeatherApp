@@ -1,0 +1,80 @@
+/* ----------- Drop down ----------- */
+.dropdown {
+  position: relative;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding-left: 2vh;
+}
+
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: 28px;
+  width: 12px;
+  height: 2px;
+  background: #555;
+  z-index: 100;
+  transform: rotate(40deg);
+  transition: 0.5s;
+}
+
+.dropdown.active::before {
+  right: 20px;
+}
+
+.dropdown::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  width: 12px;
+  height: 2px;
+  background: #555;
+  z-index: 100;
+  transform: rotate(-40deg);
+  transition: 0.5s;
+}
+
+.dropdown input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 1px;
+  padding: 12px 20px;
+  background: rgb(180, 180, 180);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  outline: none;
+  border: none;
+}
+
+.dropdown .option {
+  position: absolute;
+  width: 100%;
+  top: 70px;
+  background: white;
+  box-shadow: 0 30px 30 px rgba(0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.dropdown.active .option {
+  visibility: visible;
+  opacity: 1;
+}
+.dropdown .option div {
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.dropdown .option div:hover {
+  background: blue;
+  color: white;
+}

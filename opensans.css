@@ -1,0 +1,30 @@
+/* -- Matching the css criteria -- 
+Title: 32px - bold
+Subtitle: 28px - bold
+Dropdown: 28px – normal
+Date: 18px – bold
+Temperature: 18px – normal
+------------------------------- */
+
+.weatherTitle {
+  padding-left: 2vh;
+  font-family: "Asap", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 32px;
+}
+
+.weatherSubtitle {
+  padding-left: 2vh;
+  font-family: "Asap", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 28px;
+}
+
+input[type="text"] {
+  font-size: 28px;
+}
+
+.dropdown {
+  font-size: 28px;
+}

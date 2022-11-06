@@ -10,13 +10,63 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style1.css" />
+    <link rel="stylesheet" href="./opensans.css" />
+    <link rel="stylesheet" href="./dropdown.css" />
+    <link rel="stylesheet" href="./weathers.css" />
+
+    <!-- Open Sans Style Title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500&family=Open+Sans:wght@300&family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <script src="./script.js" defer></script>
   </head>
 
   <body>
     <div class="container">
-      <div class="title">City</div>
+      <div class="assignment">Technical Test - Weather Forecast</div>
+      <div class="name">By - Junyoung(Johnny) Kang</div>
+      <button id="forecastButton">Open Forecast</button>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p class="weatherTitle">Weather Forecast</p>
+            <span class="close">&times;</span>
+          </div>
+
+          <div class="modal-body">
+            <p class="weatherSubtitle">City</p>
+
+            <div class="dropdown">
+              <input
+                type="text"
+                class="search-bar"
+                readonly
+                placeholder="Cities"
+              />
+              <div class="option">
+                <div onmouseover="display('Toronto')">Toronto</div>
+                <div onmouseover="display('London')">London</div>
+                <div onmouseover="display('Paris')">Paris</div>
+                <div onmouseover="display('New York')">New York</div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="flex-container center">
+            <li class="flex-item">1</li>
+            <li class="flex-item">2</li>
+            <li class="flex-item">3</li>
+            <li class="flex-item">4</li>
+            <li class="flex-item">5</li>
+          </ul>
+        </div>
+      </div>
     </div>
+
     <!-- <div class="search">
       <div class="dropdown">
         <input type="text" class="search-bar" readonly placeholder="Cities" />

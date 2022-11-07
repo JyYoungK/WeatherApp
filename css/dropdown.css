@@ -20,7 +20,8 @@
 }
 
 .dropdown.active::before {
-  right: 20px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
 .dropdown::after {
@@ -34,6 +35,11 @@
   z-index: 100;
   transform: rotate(-40deg);
   transition: 0.5s;
+}
+
+.dropdown.active::after {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
 }
 
 .dropdown input {
@@ -53,7 +59,7 @@
 
 .dropdown .option {
   position: absolute;
-  width: 80%;
+  width: 20%;
   top: 70px;
   background: white;
   box-shadow: 0 30px 30 px rgba(0, 0, 0.05);

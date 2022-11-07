@@ -57,6 +57,7 @@ function fetchWeather() {
 
 function displayWeather(data) {
   console.log("Displaying: " + data.city.name);
+  console.log(data);
   let cityName = selectedCity.replace(/\s/g, "").toLowerCase();
   document.getElementsByClassName(
     "modal-main"
@@ -112,3 +113,4 @@ for (let i = 0; i < 5; i++) {
   document.getElementsByClassName(`dates dates_` + i)[0].innerHTML =
     months[nextDate.getMonth()] + " " + nextDate.getDate();
 }
+// -------------------  Display Weather Card ------------------ //

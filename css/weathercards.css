@@ -1,8 +1,10 @@
+/* ------------------------- Weather Card CSS ------------------------- */
+
 .flex-container {
   padding: 6px;
-  margin: 0;
   list-style: none;
   display: flex;
+  margin-top: 5%;
 }
 
 .center {

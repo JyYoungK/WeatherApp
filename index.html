@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style1.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./opensans.css" />
     <link rel="stylesheet" href="./dropdown.css" />
     <link rel="stylesheet" href="./weathers.css" />
@@ -48,21 +48,90 @@
                 placeholder="Cities"
               />
               <div class="option">
-                <div onmouseover="display('Toronto')">Toronto</div>
+                <div onmouseover="display('Hong Kong')">Hong Kong</div>
                 <div onmouseover="display('London')">London</div>
-                <div onmouseover="display('Paris')">Paris</div>
                 <div onmouseover="display('New York')">New York</div>
+                <div onmouseover="display('Paris')">Paris</div>
+                <div onmouseover="display('Seoul')">Seoul</div>
+                <div onmouseover="display('Toronto')">Toronto</div>
               </div>
             </div>
           </div>
 
           <ul class="flex-container center">
-            <li class="flex-item">1</li>
-            <li class="flex-item">2</li>
-            <li class="flex-item">3</li>
-            <li class="flex-item">4</li>
-            <li class="flex-item">5</li>
+            <!--           0 Day            -->
+            <li class="flex-item">
+              <div class="weekday weekday_0"></div>
+              <div class="dates dates_0"></div>
+              <img
+                src="https://openweathermap.org/img/wn/04n.png"
+                alt=""
+                class="weathericon_0"
+              />
+              <div class="detail temperature_0">Temperature: ?? °C</div>
+              <div class="detail humidity_0">Humidity: ??</div>
+              <div class="detail wind_0">Wind speed: ??</div>
+              <div class="detail description_0">Description: ??</div>
+            </li>
+            <!--           1 Day            -->
+            <li class="flex-item">
+              <div class="weekday weekday_1"></div>
+              <div class="dates dates_1"></div>
+              <img
+                src="https://openweathermap.org/img/wn/04n.png"
+                alt=""
+                class="weathericon_1"
+              />
+              <div class="detail temperature_1">Temperature: ?? °C</div>
+              <div class="detail humidity_1">Humidity: ??</div>
+              <div class="detail wind_1">Wind speed: ??</div>
+              <div class="detail description_1">Description: ??</div>
+            </li>
+            <!--           2 Day            -->
+            <li class="flex-item">
+              <div class="weekday weekday_2"></div>
+              <div class="dates dates_2"></div>
+              <img
+                src="https://openweathermap.org/img/wn/04n.png"
+                alt=""
+                class="weathericon_2"
+              />
+              <div class="detail temperature_2">Temperature: ?? °C</div>
+              <div class="detail humidity_2">Humidity: ??</div>
+              <div class="detail wind_2">Wind speed: ??</div>
+              <div class="detail description_2">Description: ??</div>
+            </li>
+            <!--           3 Day            -->
+            <li class="flex-item">
+              <div class="weekday weekday_3"></div>
+              <div class="dates dates_3"></div>
+              <img
+                src="https://openweathermap.org/img/wn/04n.png"
+                alt=""
+                class="weathericon_3"
+              />
+              <div class="detail temperature_3">Temperature: ?? °C</div>
+              <div class="detail humidity_3">Humidity: ??</div>
+              <div class="detail wind_3">Wind speed: ??</div>
+              <div class="detail description_3">Description: ??</div>
+            </li>
+            <!--           4 Day            -->
+            <li class="flex-item">
+              <div class="weekday weekday_4"></div>
+              <div class="dates dates_4"></div>
+              <img
+                src="https://openweathermap.org/img/wn/04n.png"
+                alt=""
+                class="weathericon_4"
+              />
+              <div class="detail temperature_4">Temperature: ?? °C</div>
+              <div class="detail humidity_4">Humidity: ??</div>
+              <div class="detail wind_4">Wind speed: ??</div>
+              <div class="detail description_4">Description: ??</div>
+            </li>
           </ul>
+
+          <button class="button" onclick="fetchWeather()">Apply</button>
         </div>
       </div>
     </div>

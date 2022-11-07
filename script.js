@@ -7,6 +7,7 @@ var btn = document.getElementById("forecastButton");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+var selectedCity;
 // When the user clicks the button, open the modal
 btn.onclick = function () {
   modal.style.display = "block";
@@ -32,15 +33,14 @@ window.onclick = function (event) {
 // ------------------------  Fetch API ------------------------ //
 function display(city) {
   document.querySelector(".search-bar").value = city;
-  document.querySelector(".city").innerText = city;
-  fetchWeather(city);
+  selectedCity = city;
 }
 
-function fetchWeather(city) {
+function fetchWeather() {
   const opeanweathermapApiKEY = "713f964a0a59c33b670434c772385769";
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
-      city +
+      selectedCity +
       "&units=metric&appid=" +
       opeanweathermapApiKEY
   )
@@ -57,17 +57,59 @@ function fetchWeather(city) {
 function displayWeather(data) {
   console.log(data);
   let { name } = data.city.name;
-  const { icon, description } = data.list[0].weather[0];
-  const { temp, humidity } = data.list[0].main;
-  const { speed } = data.list[0].wind;
-  document.querySelector(".icon").src =
-    "https://openweathermap.org/img/wn/" + icon + ".png";
-  document.querySelector(".description").innerText = description;
-  document.querySelector(".temp").innerText = temp + "°C";
-  document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
-  document.querySelector(".wind").innerText = "Wind speed: " + speed + " km/h";
-  document.querySelector(".weather").classList.remove("loading");
-  document.body.style.backgroundImage =
-    "url('https://source.unsplash.com/1600x900/?" + name + "')";
+  for (let i = 0; i < 5; i++) {
+    console.log(data.list[i]);
+    const { icon, description } = data.list[i].weather[0];
+    const { temp, humidity } = data.list[i].main;
+    const { speed } = data.list[i].wind;
+    document.querySelector(".weathericon_" + i).src =
+      "https://openweathermap.org/img/wn/" + icon + ".png";
+    document.getElementsByClassName("detail temperature_" + i)[0].innerText =
+      temp + "°C";
+    document.getElementsByClassName("detail humidity_" + i)[0].innerText =
+      "Humidity: " + humidity + "%";
+    document.getElementsByClassName("detail wind_" + i)[0].innerText =
+      "Wind speed: " + speed + " km/h";
+    document.getElementsByClassName("detail description_" + i)[0].innerText =
+      description;
+
+    // document.querySelector(".weather").classList.remove("loading");
+    // document.body.style.backgroundImage =
+    //   "url('https://source.unsplash.com/1600x900/?" + name + "')";
+  }
 }
 // ------------------------  Fetch API ------------------------ //
+// -------------------  Display Weather Card ------------------ //
+const weekday = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "June",
+  "July",
+  "Aug",
+  "Sept",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+var d = new Date();
+var nextDate = new Date(d);
+for (let i = 0; i < 5; i++) {
+  nextDate.setDate(d.getDate() + i);
+  document.getElementsByClassName(`weekday weekday_` + i)[0].innerHTML =
+    weekday[nextDate.getDay()];
+  document.getElementsByClassName(`dates dates_` + i)[0].innerHTML =
+    months[nextDate.getMonth()] + " " + nextDate.getDate();
+}

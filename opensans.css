@@ -22,9 +22,33 @@ Temperature: 18px – normal
 }
 
 input[type="text"] {
+  font-family: "Asap", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 28px;
 }
 
 .dropdown {
+  font-family: "Asap", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 28px;
+}
+
+.dates {
+  font-family: "Asap", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.weekday {
+  font-family: "Asap", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.detail {
+  font-family: "Asap", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
 }

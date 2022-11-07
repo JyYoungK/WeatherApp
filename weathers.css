@@ -10,18 +10,15 @@
 }
 
 .center li {
-  background: deepskyblue;
+  background: lightskyblue;
 }
 
 .flex-item {
   background: tomato;
   padding: 5px;
   width: 300px;
-  height: 200px;
+  height: 300px;
   margin: 5px;
-  line-height: 50px;
   color: white;
-  font-weight: bold;
-  font-size: 2em;
   text-align: center;
 }

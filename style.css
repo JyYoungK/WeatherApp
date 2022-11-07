@@ -34,37 +34,80 @@
 }
 
 /* ------------------------- Modal CSS ------------------------- */
-
-.modal {
+.simple-modal {
+  --gutter: 14px;
+  --modal-color: #800000;
+  --soft-color: #fafafa;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 2%;
+}
+.simple-modal__content {
+  width: 95vw;
+  height: 90vh;
+  max-height: 900px;
+  max-width: 1200px;
   position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 0 auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.simple-modal__content header {
+  min-height: 60px;
+  height: 60px;
+  color: #fff;
+  background-color: var(--modal-color);
+  display: grid;
+  padding-left: var(--gutter);
+  align-items: center;
+  grid-template-columns: auto 60px;
+}
+.simple-modal__content header h4 {
   margin: 0;
   text-align: left;
-  margin: 0;
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
 }
-
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 85%;
-  height: 90%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s;
+.simple-modal__content header span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.simple-modal__content header span:hover {
+  opacity: 1;
+}
+.simple-modal__content .modal-main {
+  flex: 1;
+  text-align: left;
+  overflow: auto;
+  padding: var(--gutter);
+}
+.simple-modal__content footer {
+  height: auto;
+  text-align: right;
+  border-top: solid 1px #ccc;
+  padding: var(--gutter);
+  background-color: #fff;
+  background-color: var(--soft-color);
+}
+.simple-modal__content footer button,
+.simple-modal__content footer input {
+  margin: 0;
+}
+.simple-modal__content footer button:not(:last-child),
+.simple-modal__content footer input:not(:last-child) {
+  margin-right: var(--gutter);
 }
 
 .modal-header {
@@ -78,9 +121,10 @@
   justify-content: space-between;
 }
 
-.modal-body {
+.modal-subheader {
   padding: 2px 16px;
-  /* position: relative; */
+  margin-top: 20px;
+  text-align: left;
 }
 
 /* Add Animation */

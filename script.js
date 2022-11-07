@@ -8,6 +8,7 @@ var btn = document.getElementById("forecastButton");
 var span = document.getElementsByClassName("close")[0];
 
 var selectedCity;
+
 // When the user clicks the button, open the modal
 btn.onclick = function () {
   modal.style.display = "block";
@@ -55,10 +56,12 @@ function fetchWeather() {
 }
 
 function displayWeather(data) {
-  console.log(data);
-  let { name } = data.city.name;
+  console.log("Displaying: " + data.city.name);
+  let cityName = selectedCity.replace(/\s/g, "").toLowerCase();
+  document.getElementsByClassName(
+    "modal-main"
+  )[0].style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${cityName}')`;
   for (let i = 0; i < 5; i++) {
-    console.log(data.list[i]);
     const { icon, description } = data.list[i].weather[0];
     const { temp, humidity } = data.list[i].main;
     const { speed } = data.list[i].wind;
@@ -72,10 +75,6 @@ function displayWeather(data) {
       "Wind speed: " + speed + " km/h";
     document.getElementsByClassName("detail description_" + i)[0].innerText =
       description;
-
-    // document.querySelector(".weather").classList.remove("loading");
-    // document.body.style.backgroundImage =
-    //   "url('https://source.unsplash.com/1600x900/?" + name + "')";
   }
 }
 // ------------------------  Fetch API ------------------------ //
